@@ -2,7 +2,7 @@ function update_progress_bar() {
 	const inner_bar = "#bar_inner";
 	const bar_title = document.getElementById("bar_title");
 	
-	const CURRENT_PROGRESS_INT = 85;
+	const CURRENT_PROGRESS_INT = 100;
 	const CURRENT_PROGRESS_TITLE = "SUPER PLATFORM: R | PORTUGUESE TRANSLATION";
 	
 	$(inner_bar).width(CURRENT_PROGRESS_INT+"%");
