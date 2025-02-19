@@ -2,491 +2,397 @@
 
 <html>
 
-<head>
-	<title>Clooverland Studios - Home</title>
-	
-	<link href="https://fonts.cdnfonts.com/css/arima-koshi" rel="stylesheet">
-	
-	<link rel="icon" type="image/x-icon" href="default.ico">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="UTF-8">
-	
-	<link rel="stylesheet" href="main.css">
-	<link rel="stylesheet" href="header_css.css">
-	<link rel="stylesheet" href="footer_css.css">
-	
-	<style>
-		@import url('https://fonts.cdnfonts.com/css/evil-of-frankenstein-2');
-	
-		.big_painting {
-			width: 95%;
-			margin: 0 auto;
-			
-			display: flex;
-			align-items: center;
-			align-content: center;
-			justify-content: center;
-			flex-direction: column;
-			
-		}
-		
-		.big_painting img {
-			width: clamp(360px, 80%, 1200px);
-		}
-		
-		.big_painting h3 {
-			text-align: center;
-			font-size: clamp(3px, 10vw, 25px);
-		}
-		
-		
-		
-		.newgame_banner {
-			width: 100%;
-			height: 260px;
-			
-			display: flex;
-			align-content: center;
-			justify-content: center;
-		}
-		
-		.inner_banner {
-			width: 90%;
-			height: 93%;
-			
-			/* border: 10px inset #3c2315; /* hallow */
-			border: 10px inset #0d0727; /* default */
-			/* border: 10px inset #54d95f; /* xmas */
-			
-			filter: blur(0.8px);
-			/* background: radial-gradient(circle, rgba(60, 35, 21,1) 0%, rgba(0,0,0,1) 47%); /* hallow */
-			background: radial-gradient(circle, rgba(0,31,73,1) 0%, rgba(0,0,0,1) 47%); /* default */
-			/* background: radial-gradient(circle, rgba(84, 217, 95,1) 0%, rgba(0,0,0,1) 47%); /* xmas */
-			
-			display: flex;
-			align-content: center;
-			justify-content: center;
-		}
-		
-		.icy {
-			width: clamp(150px, 100%, 150px);
-			height: clamp(30px, 100%, 220px);
-		}
-		
-		.rev_icy {
-			width: clamp(150px, 100%, 250px);
-			height: clamp(30px, 100%, 220px);
-		}
-		
-		@keyframes squish {
-			from {
-				width: clamp(150px, 100%, 210px);
-				height: clamp(30px, 100%, 220px);
-				transform: translateY(10px);
-			}
-			
-			to {
-				width: clamp(150px, 100%, 210px);
-				height: clamp(30px, 100%, 180px);
-				transform: translateY(50px);
-			}
-		}
-		
-		@keyframes rev_squish {
-			from {
-				width: clamp(150px, 100%, 210px);
-				height: clamp(30px, 100%, 220px);
-				transform: scaleX(-1) translateY(10px);
-			}
-			
-			to {
-				width: clamp(150px, 100%, 210px);
-				height: clamp(30px, 100%, 180px);
-				transform: scaleX(-1) translateY(50px);
-			}
-		}
-		
-		.banner_ad {
-			width: 320px;
+	<head>
 
-			display: flex;
-			align-content: center;
-			justify-content: center;
-			flex-direction: column;
-			
-			margin-right: -50px;
-		}
+		<link href="https://fonts.cdnfonts.com/css/pixeloid-sans" rel="stylesheet">
+		<title> Arcade - Clooverland Studios </title>
+		<link rel="icon" type="image/x-icon" href="arcade_def.ico">
 		
-		.banner_ad img {
-			width: clamp(100px, 100%, 300px);
-		}
+		<style>
 		
-		.banner_ad h3  {
-			width: 280px;
-			text-align: center;
-			transform: translateY(-20px);
-			font-size: 35px;
-			transition: 0.3s ease;
-		}
-		
-		.banner_ad h3:hover {
-			color: yellow;
-			cursor: pointer;
-			font-size: 37px;
-		}
-		
-		
-		
-		.arcade {
-			width: 90%;
-			height: 500px;
-			transform: translateY(20px);
-		}
-		
-		.inner_arcade {
-			width: 100%;
-			height: 100%;
-			
-			display: flex;
-			align-content: center;
-			justify-content: center;
-			align-items: center;
-		}
-		
-		.arcade_machine {
-			margin-right: -160px;
-			filter: drop-shadow(0 0 5px blue);
-			
-			width: 250px;
-		}
-		
-		.arcade_controls {
-			display: flex;
-			align-content: center;
-			align-items: center;
-			justify-content: center;
-			
-			transform: translate(15px, -25px);
-		}
-		
-		.arcade_button {
-			transform: translate(15px, 25px);
-			width: 40px;
-		}
-		
-		.arcade_analog {
-			width: 80px;
-		}
-		
-		.arcade_analog:hover {
-			cursor: grab;
-		}
-		
-		.arcade_analog:active {
-			cursor: grabbing;
-		}
-		
-		.arcade_button:hover {
-			cursor: pointer;
-		}
-		
-		.arcade_button:active {
-			cursor: default;
-			filter: brightness(50%);
-		}
-		
-		@media only screen and (max-width: 720px) {
-			.icy {
-				display: none;
+			* {
+				font-family: 'Pixeloid Sans', sans-serif;
+				color: white;
+				text-align: center;
+				text-shadow: 0 0 8px black;
 			}
 			
-			.rev_icy {
-				display: none;
+			a {
+				text-decoration:none;
 			}
-		}
-		
-		.teaser_ad {
-			width: 800px;
-			height: 520px;
 			
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-		
-		.click_for_teaser {
-			margin-top: 15px;
-			margin-bottom: 20px;
-		
-			text-align: center; 
-			font-size: 25px; 
-			filter: drop-shadow(0 0 5px red);
-			transition: 0.15s ease;
-		}
-		
-		.click_for_teaser:hover {
-			cursor: pointer;
-			font-size: 27px;
-			color: yellow;
-			filter: drop-shadow(0 0 5px yellow);
-		}
-		
-		@media only screen and (max-width: 720px) {
-			.teaser_ad {
-				display: none;
+			*:hover {
+				cursor: default;
 			}
-		}
-	
-	</style>
-
-</head>
-
-<body bgColor="black">
-	<div class="slidingbg"></div>
-
-	<div class="header">
-		<div class="inner_header">
-			<h4 onclick="javascript:( function() { window.location.replace('https://clooverlandstudios.com') } )()"> HOME </h4>
-			<h4 onclick="javascript:( function() { window.location.replace('https://clooverlandstudios.com/news') } )()"> NEWS </h4>
 			
-			<img src="resources/logos/logo_white.png">
+			main {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
 			
-			<h4 onclick="javascript:( function() { window.open('https://arcade.clooverlandstudios.com', '_blank') } )()"> ARCADE </h4>
-			<h4 onclick="javascript:( function() { window.location.replace('https://clooverlandstudios.com/about') } )()"> ABOUT </h4>
-		</div>
-		
-		<div class="inner_header_mobile">
-			<img onclick="javascript:( function() { window.location.replace('https://clooverlandstudios.com') } )()" class="header_icon_base" id="header_icon_home" src="resources/icons/dad.png">
-			<img onclick="javascript:( function() { window.location.replace('https://clooverlandstudios.com/news') } )()" class="header_icon_base" id="header_icon_news" src="resources/icons/dad.png">
+			.little_cubes {
+				z-index: -1;
 			
-			<img id="header_logo" src="resources/logos/logo_white.png">
-			
-			<img onclick="javascript:( function() { window.open('https://arcade.clooverlandstudios.com', '_blank') } )()" class="header_icon_base" id="header_icon_arcade" src="resources/icons/dad.png">
-			<img onclick="javascript:( function() { window.location.replace('https://clooverlandstudios.com/about') } )()" class="header_icon_base" id="header_icon_about" src="resources/icons/dad.png">
-		</div>
-	</div>
-	
-	<div class="loading_game" style="display: none;">
-		<h3 style="font-size: 35px; margin-top: 100px; text-align: center; line-height: 1;">LOADING GAME <br> <span style="color:yellow; font-size: 60px;" id="text"> > GAMENAME < </span> </h3>
-	</div>
-
-	<div class="big_painting">
-		<img src="resources/big_painting.png">
-		<h3 style="font-size: 35px; margin-bottom: 10px;">EVERYONE IS HERE! </h3>
-	</div>
-	
-	<div class="teaser_ad">
-		<h4 style="text-align: center; font-size: 25px; filter: drop-shadow(0 0 5px red);"> SUPER PLATFORM: REORIGINAL | TEASER </h4>
-	
-		<video style="border-radius: 25px; filter: drop-shadow(0 0 10px red);" width="600" height="400" controls>
-			<source src="resources/spr_teaser.mp4" type="video/mp4">
-		</video>
-		
-		<h4 class="click_for_teaser"> WATCH HERE </h4>
-	</div>
-	
-	<div class="newgame_banner">
-		<div class="inner_banner">
-			<img class="icy" src="resources/funnyguy.png">
+				height: 180px;
+				width: 10000px;
 				
-			<div class="banner_ad">
-				<img src="resources/arcade/logos/superplatformreoriginal.png">
-				<h3 onclick="javascript:( function() { window.open('https://arcade.clooverlandstudios.com/superplatformreoriginal', '_blank'); } )()"> PLAY NOW! </h3>
-			</div>
-			
-			<img class="rev_icy" src="resources/funnyguy2.png">
-		</div>
-	</div>
-	
-	<div class="arcade">
-		<div class="inner_arcade">
-			<img class="arcade_machine" id="a_machine" src="resources/arcade/sp_org.png">
-			<div class="arcade_controls">
-				<img class="arcade_button" id="a_button" onclick="open_game_page()" src="resources/arcade/assets/button.png">
-				<img class="arcade_analog" id="a_analog" onclick="update_arcade_to_game()" src="resources/arcade/assets/analog_idle.png">
-			</div>
-		</div>
-	</div>
-	
-	<div class="footer">
-		<div class="inner_footer">
-			<h4> CLOOVERLAND STUDIOS <br> <span style="font-size: 13px;"> Making games for entertainment since 2021. </span> </h4>
-			
-			<div class="socials">
-				<h4 onclick="open_youtube();" style="color: #f45757;"> YOUTUBE </h4>
-				<h4 onclick="open_twitter();" style="color: #82bff7;"> TWITTER </h4>
-				<h4 onclick="open_server();" style="color: #8286f7"> DISCORD SERVER </h4>
-			</div>
-		</div>
-	</div>
-	
-	<div class="bottom_footer"></div>
-
-</body>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-<script>
-
-	$(document).ready(function(){
-		$(".click_for_teaser").on("click", function(){
-			window.open("https://www.youtube.com/watch?v=gKEfsdfpqNA&t=1s", "_blank");
-		})
-	})
-
-	var current_arcade_game = 0;
-	const max_games = 7;
-	const domain = "https://arcade.clooverlandstudios.com/";
-	const visuals_folder = "resources/arcade/";
-	
-	var can_update_arcade = true;
-	var on_secret = false;
-	var clicked = false;
-	
-	const game_links = [
-		domain+"superplatformoriginal",
-		domain+"superplatformdemo",
-		domain+"lightsout",
-		domain+"poweroutageold",
-		domain+"friendshiptest",
-		domain+"crossworldsparty",
-		domain+"icecreamcatch",
-		domain+"superplatformreoriginal",
-	]
-	
-	const game_visuals = [
-		visuals_folder+"sp_org.png",
-		visuals_folder+"sp_demo.png",
-		visuals_folder+"lo.png",
-		visuals_folder+"po_demo.png",
-		visuals_folder+"ft.png",
-		visuals_folder+"cw.png",
-		visuals_folder+"ic.png",
-		visuals_folder+"sp_r.png",
-	]
-	
-	const game_names = [
-		"Super Platform: Original",
-		"Super Platform: Chapter 2 Demo",
-		"Lights Out",
-		"Power Outage: Old Demo",
-		"Friendship Test",
-		"Cross-Worlds Party",
-		"IceCream CATCH!",
-		"Super Platform: Reoriginal",
-	]
-	
-	var current_game_name = game_names[current_arcade_game];
-	
-	function update_arcade_to_game() {
-		const machine = $("#a_machine");
-		const button = $("#a_button");
-		const analog = $("#a_analog");
-		
-		var number = Math.floor(Math.random() * 50);
-		
-		if (can_update_arcade) {
-			can_update_arcade = false;
-			current_arcade_game += 1;
-			
-			machine.attr("src", "resources/arcade/changing.gif");
-			analog.attr("src",  "resources/arcade/assets/analog_pull.png");
-			
-			function update_current_to_new() {
-				if (current_arcade_game > max_games) { current_arcade_game = 0; }
+				transform: translate(-5000px, 75vh) scale(0.8);
 				
-				console.log(number);
+				position: fixed;
 				
-				if (number == 1) {
-					machine.attr("src", "resources/arcade/secret.png");
-					current_game_name = "F473";
-					on_secret = true;
-				} else {
-					machine.attr("src", game_visuals[current_arcade_game]);
-					current_game_name = game_names[current_arcade_game];
-					on_secret = false;
+				animation: wassupBroda 60s linear infinite;
+				
+				opacity: 1;
+				
+				filter: blur(60px);
+			}
+			
+			@keyframes wassupBroda {
+				from {
+					transform: translate(-5000px, 75vh) scale(0.8);
 				}
 				
-				can_update_arcade = true;
-				
-				analog.attr("src", "resources/arcade/assets/analog_idle.png");
+				to {
+					transform: translate(-2000px, 75vh) scale(0.8);
+				}
 			}
 			
-			setTimeout(update_current_to_new, 750);
-		}
-	}
-	
-	function update_visibility(bool) {
-		if (bool == true) {
-			$(".big_painting").css("display", "flex");
-			$(".header").css("display", "flex");
-			$(".arcade").css("display", "flex");
-			$(".newgame_banner").css("display", "flex");
-			$(".teaser_ad").css("display", "flex");
-			$(".footer").css("display", "flex");
-			$(".bottom_footer").css("display", "flex");
-			$(".loading_game").css("display", "none");
-		} else {
-			$(".big_painting").css("display", "none");
-			$(".header").css("display", "none");
-			$(".arcade").css("display", "none");
-			$(".newgame_banner").css("display", "none");
-			$(".teaser_ad").css("display", "none");
-			$(".footer").css("display", "none");
-			$(".bottom_footer").css("display", "none");
-			$(".loading_game").css("display", "block");
-			$("#text").html(current_game_name);
-		}
-	}
-	
-	function open_game_page() {
-		clicked = true;
-		
-		update_visibility(false);
-		
-		document.title = "Loading..."
-	
-		if (can_update_arcade) {
-			if (on_secret) {
-				can_update_arcade = false;
+			.scrollingBG {
+				z-index: -2;
+				width: 100000px;
+				height: 100000px;
+				position: fixed;
+				background-image: url(resources/checkboard.png);
 				
-				function open_game() {
-					window.open("https://clooverlandstudios.com/game/FATE", "_blank");
-					
-					can_update_arcade = true;
-					
-					update_visibility(true);
-					
-					document.title = "Clooverland Studios - Home";
-				}
-				
-				setTimeout(open_game, 3000);
-				
-			} else {
-				can_update_arcade = false;
-				
-				function open_game() {
-					window.open(game_links[current_arcade_game], "_blank");
-					
-					update_visibility(true);
-					
-					can_update_arcade = true;
-					
-					document.title = "Clooverland Studios - Home";
-				}
-				
-				setTimeout(open_game, 3000);
+				animation: 300s linear infinite scrolling_animation;
 			}
-		}
+			
+			@keyframes scrolling_animation {
+				from {
+					transform: translateY(-50000px);
+				}
+				
+				to {
+					transform: translateY(19500);
+				}
+			}
+			
+			.title_info { 
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+
+				display: flex;
+			}
+			
+			.title_info img {
+				margin-top: -20px;
+				filter: blur(1px);
+				transform: scale(0.9);
+			}
+			
+			.games_group {
+				width: 45%;
+				align-items: center;
+				justify-content: center;
+				flex-direction: row;
+				
+				display: flex;
+			}
+			
+			.games_list {
+				display: flex;
+				
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+			}
+			
+			.game_child {
+				width: 300px;
+			}
+			
+			.game_child img {
+				width: 250px;
+				height: 150px;
+				transform: scale(1);
+				
+				margin-top: -30px;
+				
+				transition: 0.1s ease;
+			}
+			
+			.game_child img:hover {
+				cursor: pointer;
+				
+				filter: drop-shadow(0 0 3px rgba(255, 255, 0, 0.5));
+			
+				transform: scale(1.1);
+			}
+			
+			#big_image_sel {
+				position: absolute;
+				z-index: -1;
+				
+				transform: scale(2.25);
+			}
+			
+			#SEL_IMAGE {
+				opacity: 0.65;
+				
+				filter: blur(2px);
+				animation: woosh 5s ease infinite alternate;
+			}
+			
+			@keyframes woosh {
+				from { transform: translate(15px, -100px) scale(0.4); }
+				to { transform: translate(15px, -100px) scale(0.5); }
+			}
+			
+			.progress_bar {
+				width: 80%;
+				height: 720px;
+				
+				transform: translateX(-15px);
+				margin-top: 10px;
+				
+				flex-direction: column;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			.bar_art {
+				width: 80%;
+				height: 600px;
+				
+				margin-top: -250px;
+				
+				flex-direction: column;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			.bar {
+				width: 720px;
+				height: 30px;
+			}
+			
+			#bar_inner {
+				background: radial-gradient(circle, rgba(150,0,0,1) 0%, rgba(84,8,8,1) 35%, rgba(17,0,0,1) 100%);
+			}
+			
+			.snow {
+				width: 1920px;
+				height: 1080px;
+				position: fixed;
+				filter: blur(5px) drop-shadow(0 0 20px yellow);
+				opacity: 0.5;
+				background-image: url(resources/xmas/snow.gif);
+			}
+			
+			#hover_game {
+				text-decoration: none;
+				color: gray;
+				transition: 0.15s ease;
+			}
+			
+			#hover_game:hover {
+				cursor: pointer;
+				color: red;
+				font-size: 17px;
+			}
+			
+			#hover_game_exist {
+				text-decoration: none;
+				color: lightgray;
+				transition: 0.15s ease;
+			}
+			
+			#hover_game_exist:hover {
+				cursor: pointer;
+				color: yellow;
+				font-size: 17px;
+			}
+			
+		</style>
+
+	</head>
+
+	<body bgColor="black">
+		<div class="scrollingBG"></div>
+		<div class="little_cubes" style="background-image: url(resources/cubes.png)"></div>
 		
+		<main style="margin-top: 50px;">
 		
-	}
+			<div class="title_info">
+				<img src="resources/web_logos/arcade_default.png">
+				
+				<h1 style="color: gold; margin-top: -25px; text-align: center;"> Welcome to the Arcade <br> 
+					<span style="font-size: 15px;">
+						This is a website used for redirects, showcase the games from the group and show the current game's progress (either a update or a new game)
+					</span>
+				</h1>
+			</div>
+			
+			<div class="games_group">
+				<div class="games_list">
+
+					<div class="game_child">
+						<a target="_blank" href="https://arcade.clooverlandstudios.com/superplatformoriginal"><img id="super_platform_original" src="resources/logos/superplatformoriginal.png"></a>
+					</div>
+					
+					<div class="game_child" style="margin-top: -25px;">
+						<a target="_blank" href="https://arcade.clooverlandstudios.com/superplatformdemo"><img id="super_platform_demo" src="resources/logos/superplatform_demo.png"></a>
+					</div>
+					
+					<div class="game_child" style="margin-top: 10px;">
+						<a target="_blank" href="https://arcade.clooverlandstudios.com/lightsout"><img id="lights_out" src="resources/logos/lightsout.png"></a>
+					</div>
+				</div>
+				
+				<div class="games_list">
+
+					<div class="game_child">
+						<a target="_blank" href="https://arcade.clooverlandstudios.com/poweroutageold"><img id="power_outage_olddemo" src="resources/logos/poweroutage_olddemo.png"></a>
+					</div>
+					
+					<div class="game_child" style="margin-top: -25px;">
+						<a target="_blank" href="https://arcade.clooverlandstudios.com/friendshiptest"><img id="friendship_test" src="resources/logos/friendshiptest.png"></a>
+					</div>
+					
+					<div class="game_child" style="margin-top: 10px;">
+						<a target="_blank" href="https://arcade.clooverlandstudios.com/crossworldsparty"><img id="cross_worlds_party" src="resources/logos/crossworldsparty.png"></a>
+					</div>
+				</div>
+				
+				<div class="games_list">
+
+					<div class="game_child">
+						<a target="_blank" href="https://arcade.clooverlandstudios.com/icecreamcatch"><img id="icecream_catch" src="resources/logos/icecreamcatch.png"></a>
+					</div>
+					
+					<div class="game_child" style="margin-top: 20px;">
+						<a target="_blank" href="https://arcade.clooverlandstudios.com/superplatformreoriginal"><img id="super_platform_r" src="resources/logos/superplatformreoriginal.png"></a>
+					</div>
+				</div>
+			</div>
+			
+			<h1 style="color: gold; margin-top: 10px; margin-bottom: 90px; text-align: center; width: 800px; z-index: 2;"> COMING SOON <br> 
+				<span style="font-size: 15px;">
+					Projects that will be under works eventually. <br>
+					
+					<span id="hover_game"> Devil's Forest <br> </span>
+					<a target="_blank" href="https://arcade.clooverlandstudios.com/boxoffriends"> <span id="hover_game_exist"> [SM4LL] Box of Friends <br> </span> </a>
+					<span id="hover_game"> [SM4LL] PlusMinus <br> </span>
+					<span id="hover_game"> [SM4LL] Jester's Curse <br> </span>
+					<span id="hover_game"> [SM4LL] Chinelas Battle <br> </span>
+					<span id="hover_game"> [STEAM] The Legend of Nanico: Full Game <br> </span>
+					<span id="hover_game"> [STEAM] Power Outage: Interdimentional Chaos <br> </span>
+					<span id="hover_game"> [STEAM] Super Platform: Lost Cartridges <br> </span>
+					<span id="hover_game"> [STEAM] Cloover's Land: Party Game <br> </span>
+				</span>
+			</h1>
+			
+			<div id="big_image_sel">
+				<img id="SEL_IMAGE" src="">
+			</div>
+			
+			<div class="progress_bar">
+				<div class="bar_art">
+					<img style="transform: translate(38px, 200px) scale(0.8); filter: drop-shadow(0 0 5px white); position: absolute;" src="resources/logos/superplatformreoriginal.png">
+					<img style="transform: translateX(25px); z-index: -1; position: absolute;" src="resources/super_platform_r_3.png">
+				</div>
+				
+				<div class="bar" style="transform: translateX(28px);">
+					<h3 id="bar_title" style="margin-bottom: 10px; color: gold;"> SUPER PLATFORM: REORIGINAL | BASE GAME [0%] </h3>
+					<div style="width: 100%; height: 100%; background-color: black; margin-bottom: -34px; border-radius: 25px; transform: translate(3.5px, -0.5px);" id="bg"></div>
+					<div style="width: 100%; height: 100%; margin-bottom: -34px; border-radius: 25px; transform: translate(3.5px, 4px);" id="bar_inner"></div>
+					<div style="width: 99.9%; height: 100%; border: 4px solid black; border-radius: 25px; transform: translateY(4px)" id="bar_outside"></div>
+				</div>
+			</div>
+		
+		</main>
+		
+	</body>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="updateProgressBar.js"></script>
+
+	<script type="text/javascript">
 	
-	function open_youtube() { window.open("https://youtube.com/@clooverlandstudios", "_blank"); }
-	function open_twitter() { window.open("https://x.com/clooverland", "_blank"); }
-	function open_server() { window.open("https://discord.com/invite/7YhtNaN95R", "_blank"); }
-	
-</script>
+		update_progress_bar();
+
+		const games_logo_list = [
+			document.getElementById("super_platform_original"),
+			document.getElementById("super_platform_demo"),
+			document.getElementById("lights_out"),
+			document.getElementById("power_outage_olddemo"),
+			document.getElementById("friendship_test"),
+			document.getElementById("cross_worlds_party"),
+			document.getElementById("icecream_catch"),
+			document.getElementById("super_platform_r"),
+		]
+
+		const IMG = document.getElementById("SEL_IMAGE");
+		
+		$(document).ready(function() {
+				$(IMG).css("visibility", "initial");
+				
+				if (!($(games_logo_list[0]).hover()) && !($(games_logo_list[1]).hover()) && !($(games_logo_list[2]).hover())) {
+					$(IMG).attr("src", "resources/checkboard.png");
+				}
+				
+				$(".games_group").hover(function() {
+					// Super Platform: Original
+					$(games_logo_list[0]).hover(function() {
+						$(IMG).attr("src", "resources/super_platform_org.png");
+					})
+					
+					// Super Platform: Demo
+					$(games_logo_list[1]).hover(function() {
+						$(IMG).attr("src", "resources/super_platform_demo.png");
+					})
+					
+					// Lights Out
+					$(games_logo_list[2]).hover(function() {
+						$(IMG).attr("src", "resources/lights_out.png");
+					})
+					
+					// Power Outage: Old Demo
+					$(games_logo_list[3]).hover(function() {
+						$(IMG).attr("src", "resources/power_outage_old_demo.png");
+					})
+					
+					// Friendship Test
+					$(games_logo_list[4]).hover(function() {
+						$(IMG).attr("src", "resources/friendship_test.png");
+					})
+					
+					// Cross-Worlds Party
+					$(games_logo_list[5]).hover(function() {
+						$(IMG).attr("src", "resources/cross_worlds.png");
+					})
+					
+					// IceCream CATCH!
+					$(games_logo_list[6]).hover(function() {
+						$(IMG).attr("src", "resources/icecream_catch.png");
+					})
+					
+					// Super Platform: Reoriginal
+					$(games_logo_list[7]).hover(function() {
+						$(IMG).attr("src", "resources/super_platform_r.png");
+					})
+					
+				}, function(){
+					$(IMG).attr("src", "");
+				})
+			}
+		)
+		
+	</script>
 
 </html>
