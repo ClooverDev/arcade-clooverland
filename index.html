@@ -155,7 +155,7 @@
 				width: 80%;
 				height: 720px;
 				
-				transform: translateX(-15px);
+				transform: translate(-15px, -160px);
 				margin-top: 10px;
 				
 				flex-direction: column;
@@ -304,11 +304,11 @@
 			<div class="progress_bar">
 				<div class="bar_art">
 					<img style="transform: translate(38px, 200px) scale(0.8); filter: drop-shadow(0 0 5px white); position: absolute;" src="resources/logos/superplatformreoriginal.png">
-					<img style="transform: translateX(25px); z-index: -1; position: absolute;" src="resources/super_platform_r_final_2.png">
+					<img style="transform: translateX(25px); z-index: -1; position: absolute;" src="resources/super_platform_r_final.png">
 				</div>
 				
 				<div class="bar" style="transform: translateX(28px);">
-					<h3 id="bar_title" style="margin-bottom: 10px; color: gold;"> SUPER PLATFORM: REORIGINAL | BASE GAME [0%] </h3>
+					<h3 id="bar_title" style="margin-bottom: 10px; color: gold;"> SUPER PLATFORM: REORIGINAL | BASE GAME <span style='color:white; font-size: 32px;'><br> [0%]</span> </h3>
 					<div style="width: 100%; height: 100%; background-color: black; margin-bottom: -34px; border-radius: 25px; transform: translate(3.5px, -0.5px);" id="bg"></div>
 					<div style="width: 100%; height: 100%; margin-bottom: -34px; border-radius: 25px; transform: translate(3.5px, 4px);" id="bar_inner"></div>
 					<div style="width: 99.9%; height: 100%; border: 4px solid black; border-radius: 25px; transform: translateY(4px)" id="bar_outside"></div>
@@ -323,8 +323,6 @@
 	<script src="updateProgressBar.js"></script>
 
 	<script type="text/javascript">
-	
-		update_progress_bar();
 
 		const games_logo_list = [
 			document.getElementById("super_platform_original"),
@@ -338,8 +336,18 @@
 		]
 
 		const IMG = document.getElementById("SEL_IMAGE");
+		var prog_on_scrn = false;
 		
 		$(document).ready(function() {
+				update_main_info();
+		
+				$(window).on('resize scroll', function() {
+					if ($("#bar_outside").isInViewport() && !(prog_on_scrn)) {
+						prog_on_scrn = true;
+						update_progress_bar();
+					}
+				});
+		
 				$(IMG).css("visibility", "initial");
 				
 				if (!($(games_logo_list[0]).hover()) && !($(games_logo_list[1]).hover()) && !($(games_logo_list[2]).hover())) {
