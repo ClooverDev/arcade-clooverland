@@ -11,7 +11,7 @@ $.fn.isInViewport = function() {
 
 const CURRENT_PROGRESS_INT = 2;
 var PROGRESSIVE_INT_COUNT = 0;
-const CURRENT_PROGRESS_TITLE = "SUPER PLATFORM: REORIGINAL !! GAME FROZEN !!";
+const CURRENT_PROGRESS_TITLE = "SUPER PLATFORM: REORIGINAL <span color='red'> !! GAME FROZEN !!</span>";
 
 function increase_int() { 
 	if (PROGRESSIVE_INT_COUNT <= CURRENT_PROGRESS_INT) {
